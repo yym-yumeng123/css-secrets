@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多重边框</title>
+	<style>
+		.box{
+			margin: 50px;
+			width: 300px;
+			height: 60px;
+			background: yellowgreen;
+		}
+		.box1{
+			box-shadow: 0 0 0 10px #655;
+		}
+		.box2{
+			box-shadow: 0 0 0 10px #655,
+						0 0 0 15px deeppink;
+		}
+		.box3{
+			box-shadow: 0 0 0 10px #655,
+						0 0 0 15px deeppink,
+						0 2px 5px 20px rgba(0, 0, 0, .6);
+		}
+		.box4{
+			
+			box-shadow: 0 0 0 10px #655,
+						inset 0 0 0 15px deeppink,
+						0 2px 5px 20px rgba(0, 0, 0, .6);
+		}
+		.box5{
+			border: 10px solid #655;
+			outline: 5px solid deeppink;
+			border-radius: 10px;
+		}
+		.box6{
+			border: 10px solid #655;
+			outline: 5px solid deeppink;
+			outline-offset: 2px;
+		}
+	</style>
+</head>
+<body>
+	<h1>多重边框</h1>
+	<div class="box box1">x偏移量 y偏移量 模糊值 扩张半径</div>
+	<div class="box box2">支持逗号语法,可以有任意多的投影, 但扩张半径是任意叠加的</div>
+	<div class="box box3"></div>
+	<div class="box box4">inset内圈阴影</div>
+	<div class="box box5">我是outline属性,只适用于双层边框场景</div>
+	<div class="box box6">outline-offset 属性对轮廓进行偏移，并在边框边缘进行绘制</div>
+	
+</body>
+</html>
