@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>半透明边框</title>
+	<style>
+		/**
+		 * Translucent borders
+		 */
+
+		 body {
+		 	background: url('http://csssecrets.io/images/stone-art.jpg');
+		 }
+
+		div {
+			/*hsla: length(色调) | percentage(饱和度) | 百分比(亮度) | opacity:(透明度) ;*/
+		 	border: 10px solid hsla(0,0%,100%,.5);  
+		 	background: white;
+		 	/* 用来确定背景的裁剪区域，换句话说，就是如何控制元素背景显示区域 */
+		 	/* background-clip ： border-box || padding-box || content-box */
+		 	background-clip: padding-box;
+
+		 	/* styling */
+		 	max-width: 20em;
+		 	padding: 2em;
+		 	margin: 2em auto 0;
+		 	font: 100%/1.5 sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		Can I haz semi-transparent borders?Pretty please?
+	</div>
+</body>
+</html>
