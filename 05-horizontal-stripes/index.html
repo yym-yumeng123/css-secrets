@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条纹背景</title>
+	<style>
+		pre {
+			font-size: 20px;
+		}
+		.border{
+			border: 10px solid red;
+			margin: 20px;
+		}
+		.box {
+			width: 500px;
+			height: 100px;
+		}
+		.box1 {
+			background: linear-gradient(#fb3, #58a);
+		}
+		.box2 {
+			background: linear-gradient(#fb3 20%, #58a 80%);
+		}
+		.box3 {
+			background: linear-gradient(#fb3 50%, #58a 50%);
+		}
+		.box4 {
+			background: linear-gradient(#fb3 50%, #58a 50%);
+			background-size: 100% 30px;
+		}
+		.box5 {
+			background: linear-gradient(#fb3 30%, #58a 30%);
+		}
+		.box6 {
+			background: linear-gradient(#fb3 30%, #58a 0);
+			background-size: 100% 30px;
+		}
+		.box7 {
+			background: linear-gradient(#fb3 33.3%, #58a 0,#58a 66.6%, yellowgreen 0);
+			background-size: 100% 45px;
+		}
+		.box8 {
+			background: linear-gradient(to right, #fb3 50%, #58a 0);
+			background-size: 30px 100%;
+		}
+		.box9 {
+			background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+			background-size: 42.4px 42.4px;
+		}
+		.box10 {
+			background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px)
+		}
+		.box11{
+			background: #58a;
+			background-image: repeating-linear-gradient(30deg, hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,
+              				  transparent 0, transparent 30px);
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+<pre>
+background: linear-gradient(#fb3, #58a)
+</pre>
+	<div class="box box2"></div>
+<pre>
+background: linear-gradient(#fb3 20%, #58a 80%)
+</pre>
+	<div class="box box3"></div>
+<pre>
+background: linear-gradient(#fb3 50%, #58a 50%)
+</pre>
+<pre>
+-----------------------------------------------------------------------------------------------------------------------
+如果多个色标具有相同的位置,会产生一个无限小的过渡区域,过度的起止色分别是第一个和最后一个指定值,颜色会在哪个地方突然变化
+-----------------------------------------------------------------------------------------------------------------------
+</pre>
+	<div class="box box4"></div>
+<pre>
+background: linear-gradient(#fb3 50%, #58a 50%);
+background-size: 100% 30px;   调整尺寸,两个条纹的高度都缩小到15px,默认是重复平铺的
+
+background-size: length|percentage|cover|contain;
+第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"
+</pre>
+	<div class="box box5"></div>
+<pre>
+background: linear-gradient(#fb3 30%, #58a 30%)  不等宽
+</pre>
+	<div class="box box6"></div>
+<pre>
+background: linear-gradient(#fb3 30%, #58a 0);
+background-size: 100% 30px;
+----------------------------------------------------------------------
+如果某个色标的位置值比整个列表中在它之前的色标位置都要小,该色标位置值会被设置为它前面所有色标位置值得最大值
+
+这意味:如果我们设置第二个色标位置值设置为0,那它的位置就总会被浏览器调整为前一个色标的位置值
+----------------------------------------------------------------------
+</pre>
+	<div class="box box7"></div>
+<pre>
+background: linear-gradient(#fb3 33.3%, #58a 0,#58a 66.6%, yellowgreen 0);    有三种颜色的条纹图案
+background-size: 100% 45px;
+</pre>
+
+<div class="border"></div>
+
+
+	<div class="box box8"></div>
+<pre>
+// to right,设置方向  竖直条纹
+background: linear-gradient(to right, #fb3 50%, #58a 0);   
+background-size: 30px 100%;
+</pre>
+
+
+<div class="border"></div>
+
+	
+	<div class="box box9"></div>
+<pre>
+// 45度条纹, 单个贴片包含4条条纹,而不是两条,只有这样才能无缝拼接
+background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);  
+// 要想得到宽度15px,我们可以用勾股定理算出background-size 的值为42px
+background-size: 42px 42px;
+</pre>
+	<div class="box box10"></div>
+<pre>
+// 和上面你的区别是 使用的属性式 重复线性渐变,而且不用background-size  在渐变的色标中指定长度
+// 最大的好处是随心所欲的改变角度 
+background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px)
+</pre>
+
+<div class="border"></div>
+
+
+	<div class="box box11"></div>
+<pre>
+// 灵活的同色系条纹
+// 把最深的颜色指定为背景色,把半透明白色条纹叠加在背景色之上得到浅色条纹,只需修改一个地方可以改变所有的颜色
+background: #58a;
+background-image: repeating-linear-gradient(30deg, hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,transparent 0, transparent 30px);
+
+</pre>
+</body>
+</html>
