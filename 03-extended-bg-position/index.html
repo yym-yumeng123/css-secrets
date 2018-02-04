@@ -19,28 +19,30 @@
 		pre{
 			font-weight: bold;
 			font-size: 20px;
-			color: deeppink;
+			/*color: deeppink;*/
 		}
 	</style>
 </head>
 <body>
 <div>background-position</div>
 <br>
----------------------------------------------------------------------
 <pre>
+-------------------------------------------------------------------------------------------------------
 font:font-style font-weight可选,font-size必填项,font-family也是必填项,line-height可选,但有的时候前面有/ 
+-------------------------------------------------------------------------------------------------------
 </pre>
----------------------------------------------------------------------
 <pre>
+------------------------------------------------------
 background-origin: padding-box|border-box|content-box;
 修改 background-origin:content-box;将以内容区作为基准
 
 background: url(code-pirate.svg)
 			no-repeat bottom right #58a;
 background-origin:content-box
+------------------------------------------------------
 </pre>
-----------------------------------------------------------------------
 <pre>
+--------------------------------------------------------------------------
 background-position 指定背景图片的初始位置。
 允许我们指定背景图片 **距离任意角的偏移量** ,只要我们在偏移量前面指定关键词
 /* Edge offsets values */
@@ -48,13 +50,15 @@ background-position: bottom 10px right 20px;
 background-position: right 3em bottom 10px;
 background-position: bottom 10px right;
 <img src="http://upload-images.jianshu.io/upload_images/5983146-cfd0313981d1c9e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+--------------------------------------------------------------------------
 </pre>
-----------------------------------------------------------------------
 <pre>
+-----------------------------------------------------------------------------
 calc() 方案
 
 background: url(code-pirate.svg)
 background-position: calc(100% - 20px) calc(100% - 10px)   运算符两侧有空白符
+-----------------------------------------------------------------------------
 </pre>
 </body>
 </html>

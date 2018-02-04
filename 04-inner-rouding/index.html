@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>边框内圆角</title>
+	<style>
+		pre {
+			font-size: 20px;
+		}
+		.something-meaningful {
+			background: #655;
+			padding: .8em;
+		}
+		.something-meaningful > div {
+			background: tan;
+			border-radius: .8em;
+			padding: 1em;
+		}
+		.something-meaningful1 {
+			background: tan;
+			border-radius: .8em;
+			padding: 1em;
+			margin: 1em;
+			box-shadow: 0 0 0 .6em #655;
+			outline: .6em solid #655;
+		}
+	</style>
+</head>
+<body>
+	<div class="something-meaningful">
+		<div>
+			容器外围有一道边框,但只在内侧有圆角
+		</div>
+	</div>
+<pre>
+	-----------------------------------------------------------------------------------------
+	上面这个效果很有趣,内侧有圆角,但是用了两个元素,并没有什么特别的,使用一个元素该怎么解决呢?
+	-----------------------------------------------------------------------------------------
+</pre>
+	<div class="something-meaningful1">
+		容器外围有一道边框,但只在内侧有圆角
+	</div>
+<pre>
+	-----------------------------------------------------------------------------------------
+	这个方法有点hack的味道,因为它依赖描边不跟着圆角走的这个事实,加两行代码
+	box-shadow: 0 0 0 .6em #655;  填补描边和容器圆角间的空隙,但应该取一个较小的值
+				      因为某些浏览器可能渲染异常
+	outline: .6em solid #655;
+	-----------------------------------------------------------------------------------------
+</pre>
+</body>
+</html>
