@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪随机背景</title>
+	<style>
+		pre{
+			font-size: 18px;
+		}
+		.box {
+			width: 500px;
+			height: 100px;
+		}
+		.box1 {
+			background: linear-gradient(90deg, #fb3 15%, #655 0, #655 40%, #ab4 0, #ab4 65%,hsla(20,40%,90%,0));
+			background-size: 80px 100%;
+		}
+		.box2 {
+			background: hsl(20, 40%, 90%);
+			background-image: linear-gradient(90deg, #fb3 10px, transparent 0),
+							linear-gradient(90deg, #ab4 20px, transparent 0),
+							linear-gradient(90deg, #655 40px, transparent 0);
+			background-size: 80px 100%,60px 100%,40px 100%;
+		}
+		.box3 {
+			background: hsl(20, 40%, 90%);
+			background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+							linear-gradient(90deg, #ab4 23px, transparent 0),
+							linear-gradient(90deg, #655 41px, transparent 0);
+			background-size: 41px 100%,61px 100%,83px 100%;
+		}
+	</style>
+</head>
+<body>
+	<h2>自然界中的事物都不是以无限平铺的方式存在,,如何随机呢?</h2>
+	<div class="box box1"></div>
+<pre>
+重复规律很明显
+</pre>
+	<div class="box box2"></div>
+<pre>
+可以看到控制了条纹间的间距还是有规律可循的
+我们应该把平铺间距最大的贴片安排在最顶层
+这里贴片的尺寸实际是所有background-size 的最小公倍数对应上图是240px;
+</pre>
+	<div class="box box3"></div>
+<pre>
+由上图的逻辑可知,为了让最小公倍数最大化,数字最好是质数,可质的
+虽然算不上完美,由代码知道 平铺贴片尺寸= 41*61*83px
+这个技巧被称为"蝉原则"
+</pre>
+	
+</body>
+</html>
