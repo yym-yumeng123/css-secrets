@@ -17,3 +17,5 @@
 ***
 **形状** 
 1. [自适应的椭圆](https://yym-yumeng123.github.io/css-secrets/09-ellipse-auto/index.html)
+2. [平行四边形](https://yym-yumeng123.github.io/css-secrets/10-Parallelogram/index.html)
+3. [菱形](https://yym-yumeng123.github.io/css-secrets/11-diamond/index.html)
