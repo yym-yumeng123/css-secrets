@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菱形</title>
+	<style>
+		div {
+			margin: 40px;
+		}
+		.diamond {
+			width: 150px;
+			transform: rotate(45deg);
+			overflow: hidden;
+		}
+		.diamond > img {
+			max-width: 100%;
+			transform: rotate(-45deg);
+		}
+		.diamond1 {
+			margin-top: 50px;
+			width: 150px;
+			transform: rotate(45deg);
+			overflow: hidden;
+		}
+		.diamond1 > img {
+			max-width: 100%;
+			transform: rotate(-45deg) scale(1.42);
+		}
+		.box > img {
+			max-width: 150px;
+			margin: 20px;
+			-webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+			clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+			transition: 1s;
+		}
+		.box > img:hover {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+	</style>
+</head>
+<body>
+	<div class="diamond">
+		<img src="http://csssecrets.io/images/adamcatlace.jpg" />
+	</div>
+	<div class="diamond1">
+		<img src="http://csssecrets.io/images/adamcatlace.jpg" />
+	</div>
+	<div class="box">
+		<img src="http://csssecrets.io/images/adamcatlace.jpg" />
+		<img src="http://csssecrets.io/images/adam-sleeping.jpg" />
+	</div>
+
+	<pre style="font-size: 16px">
+	第一排的图形是借鉴平行四边形,旋转45deg, 但是变成了八边形,因为max-width:100%;这个声明被解析为容器的边长,
+	但我们想让图片的宽度与容器的对角线相等,而不是边长相等,所以勾股定理
+
+	第二排在原有的基础上,scale(1.42)放大了,所以变成了菱形,
+
+	第三排采用了裁切路径方案:
+	clip-path: polygon()  允许我们用一系列(以逗号分割)坐标点来指定任意多边形,也可以hover变为原来的尺寸
+	</pre>
+	
+</body>
+</html>
