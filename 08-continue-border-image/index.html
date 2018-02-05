@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连续的图像边框</title>
+	<style>
+	div{
+		margin: 20px;
+	}
+	pre{
+		font-size: 18px;
+	}
+	.something{
+		width: 21em;
+		background: url(http://csssecrets.io/images/stone-art.jpg);
+		background-size: cover;
+		padding: 1em;
+	}
+	.something > div {
+		background: #fff;
+		padding: 1em;
+	}
+	.something1 {
+		border: 1em solid transparent;
+		background: linear-gradient(white, white) padding-box,
+		            url(http://csssecrets.io/images/stone-art.jpg) border-box  0 / cover;
+		
+		/* Styling & enable resize */
+		width: 21em;
+		padding: 1em;
+		overflow: hidden;
+		resize: both;
+		font: 100%/1.6 Baskerville, Palatino, serif;
+	}
+	.envelope {
+		width: 500px;
+		padding: 3em;
+		border: 1em solid transparent;
+		background: linear-gradient(white, white) padding-box,
+					repeating-linear-gradient(-45deg,red 0,red 12.5%, transparent 0, transparent 25%,#57a 0, #58a 37.5%,transparent 0, transparent 50%) 0 / 5em 5em;
+	}
+	.vintage-envelope {
+		padding: 1em;
+		border: 16px solid transparent;
+		border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
+			#58a 0, #58a 3em, transparent 0, transparent 4em);
+
+		width: 500px;
+		font: 100%/1.6 Baskerville, Palatino, serif;
+	}
+	@keyframes ants { 
+		to { 
+			background-position: 100% 100% 
+		} 
+	}
+	.ants {
+		padding: 1em;
+		border: 1px solid transparent;
+		background: linear-gradient(white, white) padding-box,
+		repeating-linear-gradient(-45deg, black 0, black 25%, transparent 0, transparent 50%) 0 / .6em .6em;
+		animation: ants 12s linear infinite;
+
+		max-width: 20em;
+		font: 100%/1.6 Baskerville, Palatino, serif;
+	}
+	</style>
+</head>
+<body>
+	<h2>把一个图片应用到边框,而不是背景,而且还希望元素尺寸扩大或者缩小,图片可自动延伸,border-image原理是九宫格伸缩法,把图片切割为九块,应用到相应的边角,所以这个属性做不到</h2>
+	<div class="something">
+		<div>
+			我想有一个连续的图片边框,但我用了两层html结构
+		</div>
+	</div>
+	<div class="something1">
+		我想有一个连续的图片边框
+	</div>
+----------------------------------------------------------------------------------------
+	<pre>
+background-clip 属性规定背景的绘制区域。默认值：border-box
+background-origin 属性规定 background-position 属性相对于什么位置来定位 默认值：padding-box
+resize: none|both|horizontal|vertical;  both;用户可调整元素的高度和宽度。
+	</pre>
+----------------------------------------------------------------------------------------
+	<h2>老式信封</h2>
+	<div class="envelope">使用的是渐变方法,点击f12检查元素看代码</div>
+
+	<div class="vintage-envelope">使用的是border-image</div>
+	<pre>
+border-image-slice 属性规定图像边框的向内偏移。border-image-slice: number|%|fill;
+number	数字值，代表图像中像素（如果是光栅图像）或矢量坐标（如果是矢量图像）。
+%	相对于图像尺寸的百分比值：图像的宽度影响水平偏移，高度影响垂直偏移。
+fill	保留边框图像的中间部分。
+
+border-image存在的问题:
+
+1. 改变border-image-slice时,需同时修改border-width
+2. 不能在border-image-slice属性中使用em单位
+	</pre>
+--------------------------------------------------------------------------------------
+<h2>蚂蚁行军效果</h2>
+	<div class="ants">类似于蚂蚁行军效果</div>
+</body>
+</html>
