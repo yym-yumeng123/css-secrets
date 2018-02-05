@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自适应椭圆</title>
+	<style>
+		pre{
+			font-size: 18px;
+			font-weight: bold;
+		}
+		div{
+			margin: 20px;
+		}
+		.box1 {
+			width: 150px;
+			height: 150px;
+			background: #fb3;
+			border-radius: 75px;
+		}
+		.box2 {
+			width: 200px;
+			height: 150px;
+			background: #fb3;
+			border-radius: 100px/75px;
+		}
+		.box3 {
+			width: 200px;
+			height: 100px;
+			background: #fb3;
+			border-radius: 50%;
+		}
+		.box4 {
+			width: 200px;
+			height: 100px;
+			background: #fb3;
+			border-radius: 50% / 100% 100% 0 0;
+		}
+		.box5 {
+			width: 200px;
+			height: 100px;
+			background: #fb3;
+			border-radius: 50% / 0 0 100% 100%;
+		}
+		.box6 {
+			width: 200px;
+			height: 100px;
+			background: #fb3;
+			border-radius: 100% 0 0 100% / 50%;
+		}
+		.box7 {
+			width: 200px;
+			height: 100px;
+			background: #fb3;
+			border-radius: 0 100% 100% 0 / 50%;
+		}
+		.box8 {
+			width: 200px;
+			height: 100px;
+			background: #fb3;
+			border-radius: 100% 0 0 0;
+		}
+	</style>
+</head>
+<body>
+	<h2>自适应椭圆</h2>
+	<div class="box1"></div>
+	<pre>
+根据内容自动调整并适应,如果宽高相等,显示为圆,不等,为椭圆
+
+border-radius 可以单独指定水平和垂直半径,用斜杠( / )分开
+	</pre>
+	<div class="box2"></div>
+	<pre>
+上面两个用的都是长度值,我们也可以用百分比,下面用百分比,可以自适应
+	</pre>
+	<div class="box3"></div>
+	<h2>半椭圆</h2>
+	<div class="box4"></div>
+	<div class="box5"></div>
+	<div class="box6"></div>
+	<div class="box7"></div>
+	<h2>四分之一椭圆</h2>
+	<div class="box8"></div>
+</body>
+</html>
