@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复杂的条纹背景</title>
+	<style>
+		pre {
+			font-size: 18px;
+		}
+		.border {
+			border: 5px solid red;
+			margin: 20px 0;
+		}
+		.box {
+			width: 500px;
+			height: 100px;
+		}
+		.box1 {
+			background: white;
+			background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
+			                  linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+			background-size: 30px 30px;
+		}
+		.box2 {
+			background: #58a;
+			background-image: linear-gradient(white 1px, transparent 0),
+							  linear-gradient(90deg, white 1px, transparent 0);
+			background-size: 30px 30px;
+		}
+		.box3 {
+			background: #58a;
+			background-image: linear-gradient(white 2px, transparent 0),
+							  linear-gradient(90deg, white 2px, transparent 0),
+							  linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+							  linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+			background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+		}
+		.box4 {
+			background: #655;
+			background-image: radial-gradient(tan 30%, transparent 0);
+			background-size: 30px 30px;
+		}
+		.box5 {
+			background: #655;
+			background-image: radial-gradient(tan 30%, transparent 0),
+							  radial-gradient(tan 30%, transparent 0);
+			background-size: 30px 30px;
+			background-position:  0 0, 15px 15px;
+		}
+		.box6 {
+			background: #eee;
+			background-image: linear-gradient(45deg, #bbb 50%, transparent 0);
+			background-size: 30px 30px;
+		}
+		.box7 {
+			background: #eee;
+			background-image: linear-gradient(45deg, transparent 75%, #bbb 0);
+			background-size: 30px 30px;
+		}
+		.box8 {
+			background: #eee;
+			background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0);
+			background-size: 30px 30px;
+		}
+		.box9 {
+			background: #eee;
+			background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0);
+			background-position:  0 0, 15px 15px;
+			background-size: 30px 30px;
+		}
+		.box10 {
+			background: #eee;
+			background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0),
+							  linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0);
+			background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+			background-size: 30px 30px;
+		}
+		.box11 {
+			background: #eee;
+			background-image: linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25) 0),
+			                  linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25) 0);
+			background-position: 0 0, 15px 15px;
+			background-size: 30px 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<pre>
+	background: white;
+	background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
+	                  linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box2"></div>
+	<pre>
+// 希望每个格子大小可以调整,网格线条粗细保持固定
+	background: #58a;
+	background-image: linear-gradient(white 1px, transparent 0),
+					  linear-gradient(90deg, white 1px, transparent 0);
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box3"></div>
+	<pre>
+	background: #58a;
+	background-image: linear-gradient(white 2px, transparent 0),
+					  linear-gradient(90deg, white 2px, transparent 0),
+					  linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+					  linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+	background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;	
+	</pre>
+
+	<div class="border"></div>
+
+	<div class="box box4"></div>
+	<pre>
+// 径向渐变 
+	background: #655;
+	background-image: radial-gradient(tan 30%, transparent 0);
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box5"></div>
+	<pre>
+// background-position 指定背景图片的初始位置。第一个值水平位置上的偏移量.第二个垂直偏移量 默认 0 0
+	background: #655;
+	background-image: radial-gradient(tan 30%, transparent 0),
+				  radial-gradient(tan 30%, transparent 0);
+	background-size: 30px 30px;
+	background-position:  0 0, 15px 15px;
+	</pre>
+
+	<div class="border"></div>
+
+	<div class="box box6"></div>
+	<pre>
+	background: #eee;
+	background-image: linear-gradient(45deg, #bbb 50%, transparent 0);
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box7"></div>
+	<pre>
+	background: #eee;
+	background-image: linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box8"></div>
+	<pre>
+	background: #eee;
+	background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+				  linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box9"></div>
+	<pre>
+// 对比上一个,把第二层渐变水平和垂直方向均移动贴片长度的一半
+	background: #eee;
+	background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+		              linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-position:  0 0, 15px 15px;
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box10"></div>
+	<pre>
+// 渐变重复一份,创建另一组并偏移定位值
+	background: #eee;
+	background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+			  linear-gradient(45deg, transparent 75%, #bbb 0),
+			  linear-gradient(45deg, #bbb 25%, transparent 0),
+			  linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+	background-size: 30px 30px;
+	</pre>
+	<div class="box box11"></div>
+</body>
+</html>
