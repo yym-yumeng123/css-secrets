@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>平行四边形</title>
+	<style>
+		body{
+			padding: 20px;
+		}
+		pre {
+			font-size: 16px;
+		}
+		.button {
+			display: inline-block;
+			padding: .5em 1em;
+			border: 0; 
+			margin: .5em;
+			background: #58a;
+			color: white;
+			text-transform: uppercase;
+			text-decoration: none;
+			font: bold 200%/1 sans-serif;	
+		}
+		.button {
+			transform:skew(45deg);
+		}
+		.button > div {
+			transform: skew(-45deg);
+		}
+		.button1 {
+			position: relative;
+			display: inline-block;
+			padding: .5em 1em;
+			border: 0; 
+			margin: .5em;
+			background: transparent;
+			color: white;
+			text-transform: uppercase;
+			text-decoration: none;
+			font: bold 200%/1 sans-serif;
+		}
+		.button1::before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: #58a;
+			transform: skew(45deg);
+
+		}
+	</style>
+</head>
+<body>
+	<h2>有一个属性式是skew() 变形属性,斜拉伸</h2>
+	<a href="#" class="button">
+		<div>Click me</div>
+	</a>
+
+	<a href="#" class="button1">
+		<div>Click me</div>
+	</a>
+	<pre>
+	第一个图形使用的是嵌套元素方案
+	第二个图形使用的是伪元素方案: 把所有的样式应用到伪元素上,,对伪元素进行变形
+	</pre>
+</body>
+</html>
