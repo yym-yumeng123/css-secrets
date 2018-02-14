@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单侧投影</title>
+	<style>
+		div.box {
+			width: 300px;
+			height: 150px;
+			background: yellow;
+			margin: 20px 0;
+			text-align: center;
+			line-height: 150px;
+		}
+		.box1 {
+			box-shadow: 2px 3px 4px rgba(0, 0, 0, .5);
+		}
+		.box2 {
+			box-shadow: 0 5px 4px -4px black;
+		}
+		.box3 {
+			box-shadow: 3px 3px 6px -3px black;
+		}
+		.box4 {
+			box-shadow: 5px 0 5px -5px black,-5px 0 5px -5px black;
+		}
+	</style>
+</head>
+<body>
+	<h1>如何在元素一侧(或者两侧)设置阴影?</h1>
+	<div class="box box1"></div>
+	<pre>
+	投影如何绘制?
+	1. 以该元素相同的位置和尺寸,画一个rgba(0, 0, 0, .5)的矩形
+	2. 向右移2px 向下移3px 
+	3. 使用高斯模糊算法进行4px模糊处理
+	4. 模糊后的矩形与原始元素的交集部分会被切除掉,因此看起来向在元素的"后面"
+	</pre>
+	<div class="box box2">单侧投影</div>
+	<pre>
+	box-shadow第四个参数 扩展半径 这个值会根据你指定的值扩大或缩小指定的值
+	</pre>
+	<div class="box box3">邻边投影</div>
+	<pre>
+	1. 不应该把投影缩的太小,把阴影藏进一侧,因此,扩张半径不应设为模糊半径的相反值,而是相反值的一半
+	2. 指定两个偏移量,他们的值需要大于或等于模糊半径的一半
+	</pre>
+	<div class="box box4">双侧投影</div>
+	<pre>
+	把单侧投影的技巧运用两次
+	</pre>
+</body>
+</html>
